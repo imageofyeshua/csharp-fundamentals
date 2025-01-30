@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AboutMyEnvironment", "About
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numbers", "Numbers\Numbers.csproj", "{B06FB790-321B-46C8-B65E-8BA6CDC8212C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Variables", "Variables\Variables.csproj", "{C7B668CC-7599-4920-A8BF-CBFFCC952A3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{B06FB790-321B-46C8-B65E-8BA6CDC8212C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B06FB790-321B-46C8-B65E-8BA6CDC8212C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B06FB790-321B-46C8-B65E-8BA6CDC8212C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7B668CC-7599-4920-A8BF-CBFFCC952A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7B668CC-7599-4920-A8BF-CBFFCC952A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7B668CC-7599-4920-A8BF-CBFFCC952A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7B668CC-7599-4920-A8BF-CBFFCC952A3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
