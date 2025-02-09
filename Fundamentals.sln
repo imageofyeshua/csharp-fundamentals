@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CastingConverting", "Castin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandlingExceptions", "HandlingExceptions\HandlingExceptions.csproj", "{2E61CEFF-66D7-4461-8CD5-9625C5E5CAB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopLevelFunctions", "TopLevelFunctions\TopLevelFunctions.csproj", "{BA339FDA-2377-4013-943F-FAC594E72773}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,5 +80,9 @@ Global
 		{2E61CEFF-66D7-4461-8CD5-9625C5E5CAB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E61CEFF-66D7-4461-8CD5-9625C5E5CAB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E61CEFF-66D7-4461-8CD5-9625C5E5CAB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA339FDA-2377-4013-943F-FAC594E72773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA339FDA-2377-4013-943F-FAC594E72773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA339FDA-2377-4013-943F-FAC594E72773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA339FDA-2377-4013-943F-FAC594E72773}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
