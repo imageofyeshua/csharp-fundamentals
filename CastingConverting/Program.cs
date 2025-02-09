@@ -100,5 +100,5 @@ WriteLine($"My birthday is {birthday:D}");
 
 bool success = int.TryParse("123", out int num);
 WriteLine($"Parsed Int: {num}");
-bool result = Uri.TryCreate("https://localhost:5000/api/customers", UriKind.Absolute, out Uri serviceUrl);
+bool result = Uri.TryCreate("https://localhost:5000/api/customers", UriKind.Absolute, out Uri? serviceUrl);
 WriteLine($"Service URL: {serviceUrl}");
