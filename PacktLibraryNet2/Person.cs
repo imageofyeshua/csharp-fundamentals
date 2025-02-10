@@ -8,5 +8,9 @@ public class Person : object
 	public WondersOfTheAncientWorld FavoriteAncientWonder;
 	public WondersOfTheAncientWorld BucketList;
 	public List<Person> Children = new();
+	// Constant fields: Values that are fixed at compilation.
+	public const string Race = "Yehuda";
+	// Read-only fields: Values that can be se at runtime.
+	public readonly string HomeSpace = "Earth";
 	#endregion
 }

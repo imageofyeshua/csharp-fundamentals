@@ -67,3 +67,9 @@ WriteLine(
   arg0: danielAccount.AccountName,
   arg1: danielAccount.Balance * BankAccount.InterestRate
 );
+
+// Constant fields are accessible via the type.
+WriteLine($"{bob.Name} is a {Person.Race}");
+
+// Read-only fields: Values that can be set at runtime.
+WriteLine($"{bob.Name} was born on {bob.HomeSpace}");
