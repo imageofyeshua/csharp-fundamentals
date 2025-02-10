@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallStackExceptionHandlingL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallStackExceptionHandling", "CallStackExceptionHandling\CallStackExceptionHandling.csproj", "{73584BC9-714A-4DE1-9519-0A2251A4682A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacktLibraryNet2", "PacktLibraryNet2\PacktLibraryNet2.csproj", "{61ACB73C-BF0C-4D7A-8313-6D86DD383FD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleApp", "PeopleApp\PeopleApp.csproj", "{82883DD7-F932-43D2-BB7E-881EA784ACC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -126,5 +130,13 @@ Global
 		{73584BC9-714A-4DE1-9519-0A2251A4682A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73584BC9-714A-4DE1-9519-0A2251A4682A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73584BC9-714A-4DE1-9519-0A2251A4682A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61ACB73C-BF0C-4D7A-8313-6D86DD383FD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61ACB73C-BF0C-4D7A-8313-6D86DD383FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61ACB73C-BF0C-4D7A-8313-6D86DD383FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61ACB73C-BF0C-4D7A-8313-6D86DD383FD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82883DD7-F932-43D2-BB7E-881EA784ACC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82883DD7-F932-43D2-BB7E-881EA784ACC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82883DD7-F932-43D2-BB7E-881EA784ACC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82883DD7-F932-43D2-BB7E-881EA784ACC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
