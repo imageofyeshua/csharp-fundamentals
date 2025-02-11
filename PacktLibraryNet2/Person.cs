@@ -9,7 +9,7 @@ public partial class Person : object
 	public DateTimeOffset Born;
 
 	// This has been moved to PersonAutoGen.cs as a property.
-	public WondersOfTheAncientWorld FavoriteAncientWonder;
+	// public WondersOfTheAncientWorld FavoriteAncientWonder;
 
 	public WondersOfTheAncientWorld BucketList;
 	public List<Person> Children = new();
