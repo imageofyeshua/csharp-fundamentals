@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using Packt.Shared;
+using Fruit = (string Name, int Number);
 
 ConfigureConsole();
 
@@ -112,7 +113,7 @@ WriteLine("{0}: {1} written by {2} has {3:N0} pages.",
 bob.WriteToConsole();
 WriteLine(bob.GetOrigin());
 WriteLine(bob.SayHello());
-WriteLine(bob.SayHelloTo("Emily"));
+WriteLine(bob.SayHello("Emily"));
 WriteLine(bob.OptionalParameters(3));
 WriteLine(bob.OptionalParameters(3, "Jump!", 98.5));
 WriteLine(bob.OptionalParameters(3, number: 51.9, command: "Hide"));
@@ -138,3 +139,36 @@ bob.ParamsParameters("Sum using commas", 3, 6, 1, -6);
 bob.ParamsParameters("Sum using collection expression", [3, 6, 1, -6]);
 bob.ParamsParameters("Sum using explicit array", new int[] { 3, 6, 1, -6 });
 bob.ParamsParameters("Sum (empty)");
+
+(string, int) fruit = bob.GetFruit();
+WriteLine($"{fruit.Item1}, {fruit.Item2} there are");
+// Without an aliased tuple type.
+// var fruitNamed = bob.GetNamedFruit();
+// With an aliased tuple type.
+Fruit fruitNamed = bob.GetNamedFruit();
+WriteLine($"There are {fruitNamed.Number} {fruitNamed.Name}.");
+
+var thing1 = ("Neville", 4);
+WriteLine($"{thing1.Item1} has {thing1.Item2} children.");
+var thing2 = (bob.Name, bob.Children.Count);
+WriteLine($"{thing2.Name} has {thing2.Count} children.");
+
+// Deconstructing tuples
+(string fruitName, int fruitNumber) = bob.GetFruit();
+WriteLine($"Deconstructed tuple: {fruitName}, {fruitNumber}");
+
+var (name1, dob1) = bob; // Implicitly calls the Deconstruct method.
+WriteLine($"Deconstructed person: {name1}, {dob1}");
+var (name2, dob2, fav2) = bob; // Implicitly calls the Deconstruct method.
+WriteLine($"Deconstructed person: {name2}, {dob2}, {fav2}");
+
+// Change to -1 to make the exception handling code execute.
+int number = 5;
+try
+{
+  WriteLine($"{number}! is {Person.Factorial(number)}");
+}
+catch (Exception ex)
+{
+  WriteLine($"{ex.GetType()} says: {ex.Message} number was {number}.");
+}
