@@ -108,3 +108,28 @@ Book book = new(isbn: "987-123456544", title: "C# 13 and .NET9")
 
 WriteLine("{0}: {1} written by {2} has {3:N0} pages.",
   book.Isbn, book.Title, book.Author, book.PageCount);
+
+bob.WriteToConsole();
+WriteLine(bob.GetOrigin());
+WriteLine(bob.SayHello());
+WriteLine(bob.SayHelloTo("Emily"));
+WriteLine(bob.OptionalParameters(3));
+WriteLine(bob.OptionalParameters(3, "Jump!", 98.5));
+WriteLine(bob.OptionalParameters(3, number: 51.9, command: "Hide"));
+WriteLine(bob.OptionalParameters(3, "Poke!", active: false));
+WriteLine(bob.OptionalParameters(number: 52.8, command: "Fly Up!", count: 7));
+
+int a = 10;
+int b = 20;
+int c = 30;
+int d = 40;
+WriteLine($"Before: a={a}, b={b}, c={c}, d={d}");
+bob.PassingParameters(a, b, ref c, out d);
+WriteLine($"After: a={a}, b={b}, c={c}, d={d}");
+
+int e = 50;
+int f = 60;
+int g = 70;
+WriteLine($"Before: e={e}, f={f}, g={g}, h doesn't exist yet!");
+bob.PassingParameters(e, f, ref g, out int h);
+WriteLine($"After: e={e}, f={f}, g={g}, h={h}");
