@@ -73,3 +73,28 @@ WriteLine($"{bob.Name} is a {Person.Race}");
 
 // Read-only fields: Values that can be set at runtime.
 WriteLine($"{bob.Name} was born on {bob.HomeSpace}");
+
+Book book = new()
+{
+  Isbn = "987-1892343400",
+  Title = "C# 12 and .NET 8 - Modern Cross-Platform Development"
+};
+
+WriteLine("{0}: {1} written by {2} has {3:N0} pages.",
+  book.Isbn, book.Title, book.Author, book.PageCount);
+
+Person blankPerson = new();
+WriteLine(
+  format: "{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}",
+  arg0: blankPerson.Name,
+  arg1: blankPerson.HomeSpace,
+  arg2: blankPerson.Instantiated
+);
+
+Person jason = new(initialName: "Jason", homeSpace: "Mars");
+WriteLine(
+  format: "{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}",
+  arg0: jason.Name,
+  arg1: jason.HomeSpace,
+  arg2: jason.Instantiated
+);

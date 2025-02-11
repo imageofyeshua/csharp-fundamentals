@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacktLibraryNet2", "PacktLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleApp", "PeopleApp\PeopleApp.csproj", "{82883DD7-F932-43D2-BB7E-881EA784ACC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacktLibraryModern", "PacktLibraryModern\PacktLibraryModern.csproj", "{AD9629FD-9F8C-4190-A07D-C79083D5A894}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -138,5 +140,9 @@ Global
 		{82883DD7-F932-43D2-BB7E-881EA784ACC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82883DD7-F932-43D2-BB7E-881EA784ACC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82883DD7-F932-43D2-BB7E-881EA784ACC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD9629FD-9F8C-4190-A07D-C79083D5A894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9629FD-9F8C-4190-A07D-C79083D5A894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9629FD-9F8C-4190-A07D-C79083D5A894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9629FD-9F8C-4190-A07D-C79083D5A894}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
