@@ -67,5 +67,15 @@ public class Person : object
 		z++;
 		WriteLine($"In the method: w={w}, x={x}, y={y}, z={z}");
 	}
+	public void ParamsParameters(
+		string text, params int[] numbers)
+	{
+		int total = 0;
+		foreach (int number in numbers)
+		{
+			total += number;
+		}
+		WriteLine($"{text}: {total}");
+	}
 	#endregion
 }

@@ -133,3 +133,8 @@ int g = 70;
 WriteLine($"Before: e={e}, f={f}, g={g}, h doesn't exist yet!");
 bob.PassingParameters(e, f, ref g, out int h);
 WriteLine($"After: e={e}, f={f}, g={g}, h={h}");
+
+bob.ParamsParameters("Sum using commas", 3, 6, 1, -6);
+bob.ParamsParameters("Sum using collection expression", [3, 6, 1, -6]);
+bob.ParamsParameters("Sum using explicit array", new int[] { 3, 6, 1, -6 });
+bob.ParamsParameters("Sum (empty)");
