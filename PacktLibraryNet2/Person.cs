@@ -15,10 +15,10 @@ public partial class Person : object
 	public List<Person> Children = new();
 
 	// Constant fields: Values that are fixed at compilation.
-	public const string Species = "Homo Sapiens";
+	public const string Race = "Homo Sapiens";
 
 	// Read-only fields: Values that can be set at runtime.
-	public readonly string HomePlanet = "Earth";
+	public readonly string HomeSpace = "Earth";
 	public readonly DateTime Instantiated;
 
 	#endregion
@@ -33,10 +33,10 @@ public partial class Person : object
 		Instantiated = DateTime.Now;
 	}
 
-	public Person(string initialName, string homePlanet)
+	public Person(string initialName, string homeSpace)
 	{
 		Name = initialName;
-		HomePlanet = homePlanet;
+		HomeSpace = homeSpace;
 		Instantiated = DateTime.Now;
 	}
 
@@ -51,7 +51,7 @@ public partial class Person : object
 
 	public string GetOrigin()
 	{
-		return $"{Name} was born on {HomePlanet}.";
+		return $"{Name} was born on {HomeSpace}.";
 	}
 
 	public string SayHello()
