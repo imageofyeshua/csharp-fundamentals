@@ -74,15 +74,6 @@ WriteLine($"{bob.Name} is a {Person.Race}");
 // Read-only fields: Values that can be set at runtime.
 WriteLine($"{bob.Name} was born on {bob.HomeSpace}");
 
-Book book = new()
-{
-  Isbn = "987-1892343400",
-  Title = "C# 12 and .NET 8 - Modern Cross-Platform Development"
-};
-
-WriteLine("{0}: {1} written by {2} has {3:N0} pages.",
-  book.Isbn, book.Title, book.Author, book.PageCount);
-
 Person blankPerson = new();
 WriteLine(
   format: "{0} of {1} was created at {2:hh:mm:ss} on a {2:dddd}",
@@ -98,3 +89,22 @@ WriteLine(
   arg1: jason.HomeSpace,
   arg2: jason.Instantiated
 );
+
+/*
+// Instantiate a book using object initializer syntax.
+Book book = new()
+{
+  Isbn = "987-1892343400",
+  Title = "C# 12 and .NET 8 - Modern Cross-Platform Development"
+};
+
+*/
+
+Book book = new(isbn: "987-123456544", title: "C# 13 and .NET9")
+{
+  Author = "Daniel Park",
+  PageCount = 987
+};
+
+WriteLine("{0}: {1} written by {2} has {3:N0} pages.",
+  book.Isbn, book.Title, book.Author, book.PageCount);
