@@ -18,7 +18,11 @@ Person peter = new() { Name = "Peter" };
 john.Pledge(matthew);
 
 // Call the static method to pledge John and Peter.
-Person.Pledge(matthew, peter);
+//Person.Pledge(matthew, peter);
+if (matthew + peter)
+{
+  WriteLine($"{matthew.Name} and {peter.Name} successfully got sworn.");
+}
 
 john.OutputBrothers();
 matthew.OutputBrothers();
@@ -30,6 +34,11 @@ agape1.Name = "Joy";
 WriteLine($"{agape1.Name} was born on {agape1.Born}");
 Person agape2 = Person.Procreate(matthew, peter);
 agape2.Name = "Peace";
+// Use the * operator to "multiply".
+Person agape3 = john * matthew;
+agape3.Name = "Mercy";
+Person agape4 = matthew * peter;
+agape4.Name = "Sincerity";
 john.WriteChildrenToConsole();
 peter.WriteChildrenToConsole();
 matthew.WriteChildrenToConsole();

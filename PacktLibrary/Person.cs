@@ -96,4 +96,19 @@ public class Person
     return Procreate(this, brother);
   }
   #endregion
+  #region Operators
+  // Define the + operator to "pledge".
+  public static bool operator +(Person p1, Person p2)
+  {
+    Pledge(p1, p2);
+    // Confirm they are both now married.
+    return p1.Sworn && p2.Sworn;
+  }
+  // Define the * operator to "multiply".
+  public static Person operator *(Person p1, Person p2)
+  {
+    // Return a reference to the agape that results from multiplying.
+    return Procreate(p1, p2);
+  }
+  #endregion
 }
