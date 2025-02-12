@@ -79,7 +79,8 @@ WriteLine(format: "Key {0} has value: {1}",
   arg1: lookupIntString[key]);
 
 // Assign the method to the Shout delegate.
-harry.Shout = Harry_Shout;
+harry.Shout += Harry_Shout;
+harry.Shout += Harry_Shout_2;
 harry.Poke();
 harry.Poke();
 harry.Poke();

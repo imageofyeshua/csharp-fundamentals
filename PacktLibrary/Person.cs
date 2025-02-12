@@ -115,7 +115,7 @@ public class Person
 
   #region Events
   // Delegate field to define the event.
-  public EventHandler? Shout; // null initially.
+  public event EventHandler? Shout; // null initially.
   // Data field related to the event.
   public int AngerLevel;
   // Method to trigger the event in certain conditions.

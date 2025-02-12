@@ -12,4 +12,10 @@ partial class Program
 		if (sender is not Person p) return;
 		WriteLine($"{p.Name} is this angry: {p.AngerLevel}");
 	}
+
+	// Another method to handle the evetn received by the harry object.
+	private static void Harry_Shout_2(object? sender, EventArgs e)
+	{
+		WriteLine("Stop it!");
+	}
 }
