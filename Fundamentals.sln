@@ -61,6 +61,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary", "SharedLibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetEverywhere", "DotNetEverywhere\DotNetEverywhere.csproj", "{1DFE545D-F367-4CC3-863A-838A202EA43E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AotConsole", "AotConsole\AotConsole.csproj", "{D1C20D0D-8961-48EF-8D3C-DC3430ADB852}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -186,5 +188,9 @@ Global
 		{1DFE545D-F367-4CC3-863A-838A202EA43E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DFE545D-F367-4CC3-863A-838A202EA43E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DFE545D-F367-4CC3-863A-838A202EA43E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1C20D0D-8961-48EF-8D3C-DC3430ADB852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C20D0D-8961-48EF-8D3C-DC3430ADB852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C20D0D-8961-48EF-8D3C-DC3430ADB852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C20D0D-8961-48EF-8D3C-DC3430ADB852}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
