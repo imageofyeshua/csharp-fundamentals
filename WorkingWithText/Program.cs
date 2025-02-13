@@ -1,4 +1,5 @@
-﻿using System.Globalization; // To use CultureInfo.
+﻿using System.Buffers;
+using System.Globalization; // To use CultureInfo.
 OutputEncoding = System.Text.Encoding.UTF8; // Enable Euro symbol.
 
 string city = "Gimcheon";
@@ -51,3 +52,34 @@ WriteLine("Compare (IgnoreCase, IgnoreNonSpace): {0}.",
 WriteLine("Compare (InvariantCultureIgnoreCase): {0}.",
   string.Compare(text1, text2,
   StringComparison.InvariantCultureIgnoreCase));
+
+string recombined = string.Join(" => ", citiesArray);
+WriteLine(recombined);
+
+CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("ko-KR");
+
+string fruit = "Apples";
+decimal price = 3090.00M;
+DateTime when = DateTime.Today;
+
+WriteLine($"Interpolated: {fruit} cost {price:C} on {when:dddd}.");
+WriteLine(string.Format("string.Format: {0} cost {1:C} on {2:dddd}.",
+  arg0: fruit, arg1: price, arg2: when));
+
+string strong = "{HG0123456789}";
+// .NET 8 or later
+SearchValues<char> strongSearchValues = SearchValues.Create(strong);
+ReadOnlySpan<char> text = "起初{H7225}，神{H430}創造{H1254}天{H8064}地{H776}";
+WriteLine($"strong: {strong}");
+WriteLine($"text: {text}");
+WriteLine($"text.IndexOfAny(strongSearchValues): {text.IndexOfAny(strongSearchValues)}");
+
+string[] names = ["Daniel", "Jason", "Eunice", "Issac"];
+// .NET 9 or later
+SearchValues<string> namesSearchValues = SearchValues.Create(
+  names, StringComparison.OrdinalIgnoreCase
+);
+ReadOnlySpan<char> sentence = "Our Father in heaven, Be with Daniel, Jason, Eunice, Issac, forever... Amen.";
+WriteLine($"names: {string.Join(' ', names)}");
+WriteLine($"sentence: {sentence}");
+WriteLine($"sentence.IndexOfAny(namesSearchValues): {sentence.IndexOfAny(namesSearchValues)}");
