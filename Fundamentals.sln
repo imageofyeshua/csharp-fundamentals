@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesAndEvents", "Deleg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullHandling", "NullHandling\NullHandling.csproj", "{5BFD75AD-168E-4817-B0BD-D363450ECE03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssembliesAndNamespaces", "AssembliesAndNamespaces\AssembliesAndNamespaces.csproj", "{0E72755A-7DF9-4919-8B85-A4A23E11C754}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -168,5 +170,9 @@ Global
 		{5BFD75AD-168E-4817-B0BD-D363450ECE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BFD75AD-168E-4817-B0BD-D363450ECE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BFD75AD-168E-4817-B0BD-D363450ECE03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E72755A-7DF9-4919-8B85-A4A23E11C754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E72755A-7DF9-4919-8B85-A4A23E11C754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E72755A-7DF9-4919-8B85-A4A23E11C754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E72755A-7DF9-4919-8B85-A4A23E11C754}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
