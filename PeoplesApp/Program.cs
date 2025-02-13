@@ -98,3 +98,64 @@ Person?[] people =
 OutputPeopleNames(people, "Initial list of people.");
 Array.Sort(people, new PersonComparer());
 OutputPeopleNames(people, "After sorting using PersonComparer's IComparer implementation:");
+
+Employee thomas = new()
+{
+  Name = "Thomas Jones",
+  Born = new(year: 1990, month: 7, day: 28,
+    hour: 0, minute: 0, second: 0, offset: TimeSpan.Zero)
+};
+
+thomas.WriteToConsole();
+
+thomas.EmployeeCode = "TJ001";
+thomas.HireDate = new(year: 2014, month: 11, day: 23);
+WriteLine($"{thomas.Name} was hired on {thomas.HireDate:yyyy-MM-dd}");
+
+WriteLine(thomas.ToString());
+
+Employee aliceInEmployee = new()
+{ Name = "Alice", EmployeeCode = "AA123" };
+
+Person aliceInPerson = aliceInEmployee;
+aliceInEmployee.WriteToConsole();
+aliceInPerson.WriteToConsole();
+WriteLine(aliceInEmployee.ToString());
+WriteLine(aliceInPerson.ToString());
+
+if (aliceInPerson is Employee explicitAlice)
+{
+  WriteLine($"{nameof(aliceInPerson)} is an Employee.");
+  // Safely do something with explicitAlice.
+}
+
+Employee? aliceAsEmployee = aliceInPerson as Employee;
+if (aliceAsEmployee is not null)
+{
+  WriteLine($"{nameof(aliceInPerson)} as an Employee.");
+  // Safely do something with aliceAsEmployee.
+}
+
+try
+{
+  thomas.TimeTravel(when: new(1999, 12, 31));
+  thomas.TimeTravel(when: new(1950, 12, 25));
+}
+catch (PersonException ex)
+{
+  WriteLine(ex.Message);
+}
+
+string email1 = "pamela@test.com";
+string email2 = "ian&test.com";
+WriteLine("{0} is a valid email address: {1}",
+  arg0: email1,
+  arg1: email1.IsValidEmail());
+WriteLine("{0} is a valid email address: {1}",
+  arg0: email2,
+  arg1: email2.IsValidEmail());
+
+Car car = new();
+//  Chain method call.
+car.SetModel("Tesla Model S").SetColor("Red");
+car.PrintCarDetails();

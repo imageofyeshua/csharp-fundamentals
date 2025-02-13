@@ -31,7 +31,7 @@ if (address.Street is not null)
   WriteLine(address.Street.Length);
 }
 
-string authorName = null;
+string? authorName = null;
 int? authorNameLength;
 // the following throws a NullReferenceException.
 // authorNameLength = authorName.Length;
