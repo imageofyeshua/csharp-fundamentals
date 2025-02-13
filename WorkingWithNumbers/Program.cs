@@ -65,3 +65,20 @@ foreach (string beatle in beatles)
   Write($"  {beatle}");
 }
 WriteLine();
+
+WriteLine($"Empty GUID: {Guid.Empty}.");
+Guid g = Guid.NewGuid();
+WriteLine($"Random GUID: {g}.");
+byte[] guidAsBytes = g.ToByteArray();
+Write("GUID as byte array: ");
+for (int i = 0; i < guidAsBytes.Length; i++)
+{
+  Write($"{guidAsBytes[i]:X2} ");
+}
+WriteLine();
+WriteLine("Generating threeV7 GUIDs:");
+for (int i = 0; i < 3; i++)
+{
+  Guid g7 = Guid.CreateVersion7(DateTimeOffset.UtcNow);
+  WriteLine($"   {g7}.");
+}
