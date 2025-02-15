@@ -1,4 +1,7 @@
-﻿// Define an alias for a dictionary with string key and string value.
+﻿using System.Collections.Immutable; // To use ImmutableDictionary<T, T>
+using System.Collections.Frozen; // To use FrozenDictionary<T, T>
+
+// Define an alias for a dictionary with string key and string value.
 using StringDictionary = System.Collections.Generic.Dictionary<string, string>;
 
 List<string> cities = new();
@@ -115,3 +118,62 @@ WriteLine("Adding Mark to queue with priority 2.");
 digitalId.Enqueue("Mark", 2);
 WriteLine($"{digitalId.Peek()} will be next to be digital ided");
 OutputPQ("Current queue for digitalId", digitalId.UnorderedItems);
+
+// UseDictionary(keywords);
+// UseDictionary(keywords.AsReadOnly());
+UseDictionary(keywords.ToImmutableDictionary());
+
+ImmutableDictionary<string, string> immutableKeywords =
+  keywords.ToImmutableDictionary();
+
+// Call the Add method with a return value.
+ImmutableDictionary<string, string> newDictionary =
+  immutableKeywords.Add(
+    key: Guid.NewGuid().ToString(),
+    value: Guid.NewGuid().ToString()
+  );
+OutputCollection("Immutable keywords dictionary", immutableKeywords);
+OutputCollection("New keywords dictionary", newDictionary);
+
+// Creating a frozen collection has an overhead to perform complex optimizations.
+FrozenDictionary<string, string> frozenKeywords =
+  keywords.ToFrozenDictionary();
+
+OutputCollection("Frozen keywords dictionary", frozenKeywords);
+// Lookups are faster in a frozen dictionary.
+WriteLine($"Define long: {frozenKeywords["long"]}");
+
+// C# 12 style initialization
+int[] numbersArray12 = [1, 3, 5];
+List<int> numbersList12 = [1, 3, 5];
+Span<int> numbersSpan = [1, 3, 5];
+
+// Spreading elements
+
+int[] row0 = [1, 2, 3];
+int[] row1 = [4, 5];
+int[] row2 = [6, 7, 8, 9];
+
+int[] combinedRows = [.. row0, .. row1, .. row2];
+WriteLine("Spreading elements with dot operator");
+foreach (int number in combinedRows)
+{
+  Write($"{number}, ");
+}
+
+// Load ten thousand fruits into the list.
+List<string> fruits = new();
+fruits.EnsureCapacity(10_000);
+
+// Passing collections to methods and their speed
+void IProcessCollection<T>(IEnumerable<T> collection)
+{
+  // Process the items in the collection
+  // Iteration allocates an object on the heap in the memory
+}
+void LProcessCollection<T>(List<T> collection)
+{
+  // Process the items in the collection
+  // List<T>.Enumerator GetEnumerator() method
+  // Returns a struct as a reference type >> 2 ~ 3 times faster
+}
