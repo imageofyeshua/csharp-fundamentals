@@ -61,3 +61,57 @@ foreach (KeyValuePair<string, string> item in keywords)
 // Look up a value using a key.
 string key = "long";
 WriteLine($"The definition of {key} is {keywords[key]}");
+
+// Sets example
+HashSet<string> names = new();
+
+foreach (string name in
+  new[] { "Adam", "Barry", "Charlie", "Barry" })
+{
+  bool added = names.Add(name);
+  WriteLine($"{name} was added: {added}");
+}
+WriteLine($"names set: {string.Join(',', names)}");
+
+// Queues example
+
+Queue<string> coffee = new();
+coffee.Enqueue("Damir"); // Front of the queue.
+coffee.Enqueue("Andrea");
+coffee.Enqueue("Ronald");
+coffee.Enqueue("Amin");
+coffee.Enqueue("Irina"); // Front of the queue.
+
+OutputCollection("Initial queue from front to back", coffee);
+
+// Server handles next person in queue.
+string served = coffee.Dequeue();
+WriteLine($"Served: {served}.");
+
+// Server handles next person in queue.
+served = coffee.Dequeue();
+WriteLine($"Served: {served}.");
+OutputCollection("Initial queue from front to back", coffee);
+WriteLine($"{coffee.Peek()} is next in line.");
+OutputCollection("Initial queue from front to back", coffee);
+
+// Priority queue example
+PriorityQueue<string, int> digitalId = new();
+// Add some people.
+// 1 = High priority people in their greed for money and this world.
+// 2 = Medium priority e.g. lay-men
+// 3 = Low priority e.g. awaken people resist Digital Id
+digitalId.Enqueue("Pamela", 1);
+digitalId.Enqueue("Rebecca", 2);
+digitalId.Enqueue("Juliet", 3);
+digitalId.Enqueue("Ian", 1);
+
+OutputPQ("Current queue for digitalId", digitalId.UnorderedItems);
+WriteLine($"{digitalId.Dequeue()} has been digital ided");
+WriteLine($"{digitalId.Dequeue()} has been digital ided");
+OutputPQ("Current queue for digitalId", digitalId.UnorderedItems);
+WriteLine($"{digitalId.Dequeue()} has been digital ided");
+WriteLine("Adding Mark to queue with priority 2.");
+digitalId.Enqueue("Mark", 2);
+WriteLine($"{digitalId.Peek()} will be next to be digital ided");
+OutputPQ("Current queue for digitalId", digitalId.UnorderedItems);
