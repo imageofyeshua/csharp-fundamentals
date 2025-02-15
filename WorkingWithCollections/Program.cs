@@ -177,3 +177,5 @@ void LProcessCollection<T>(List<T> collection)
   // List<T>.Enumerator GetEnumerator() method
   // Returns a struct as a reference type >> 2 ~ 3 times faster
 }
+IProcessCollection(names);
+LProcessCollection(names.ToList());
