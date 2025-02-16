@@ -75,6 +75,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithRanges", "Workin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithFileSystems", "WorkingWithFileSystems\WorkingWithFileSystems.csproj", "{7864D3C1-15AB-4215-A19B-A69E6D2FBED9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpectreConsole", "SpectreConsole\SpectreConsole.csproj", "{E7157574-9016-44D0-91E2-DEF33CAB01F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -517,6 +519,18 @@ Global
 		{7864D3C1-15AB-4215-A19B-A69E6D2FBED9}.Release|x64.Build.0 = Release|Any CPU
 		{7864D3C1-15AB-4215-A19B-A69E6D2FBED9}.Release|x86.ActiveCfg = Release|Any CPU
 		{7864D3C1-15AB-4215-A19B-A69E6D2FBED9}.Release|x86.Build.0 = Release|Any CPU
+		{E7157574-9016-44D0-91E2-DEF33CAB01F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7157574-9016-44D0-91E2-DEF33CAB01F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7157574-9016-44D0-91E2-DEF33CAB01F2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E7157574-9016-44D0-91E2-DEF33CAB01F2}.Debug|x64.Build.0 = Debug|Any CPU
+		{E7157574-9016-44D0-91E2-DEF33CAB01F2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E7157574-9016-44D0-91E2-DEF33CAB01F2}.Debug|x86.Build.0 = Debug|Any CPU
+		{E7157574-9016-44D0-91E2-DEF33CAB01F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7157574-9016-44D0-91E2-DEF33CAB01F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7157574-9016-44D0-91E2-DEF33CAB01F2}.Release|x64.ActiveCfg = Release|Any CPU
+		{E7157574-9016-44D0-91E2-DEF33CAB01F2}.Release|x64.Build.0 = Release|Any CPU
+		{E7157574-9016-44D0-91E2-DEF33CAB01F2}.Release|x86.ActiveCfg = Release|Any CPU
+		{E7157574-9016-44D0-91E2-DEF33CAB01F2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
