@@ -1,4 +1,5 @@
-﻿using Spectre.Console;
+﻿using System.Security.Cryptography.X509Certificates;
+using Spectre.Console;
 
 public static class Program
 {
@@ -110,22 +111,22 @@ public static class Program
     // table.Columns[0].Centered();
     // table.Columns[0].RightAligned();
 
-    // Set padding individually
+    // Set padding individually.
     table.Columns[0].PadLeft(3);
     table.Columns[0].PadRight(5);
     table.Columns[1].PadLeft(5);
 
-    // Or chained together
+    // Or chained together.
     // table.Columns[0].PadLeft(3).PadRight(5);
 
     // Or with the shorthand method if the left and right 
     // padding are identical. Vertical padding is ignored.
     // table.Columns[0].Padding(4, 0);
 
-    // Disable column wrapping
+    // Disable column wrapping.
     table.Columns[0].NoWrap();
 
-    // Set the column width
+    // Set the column width.
     table.Columns[1].Width(15);
 
     // Render the table to the console.
@@ -135,15 +136,15 @@ public static class Program
 
     #region Tree
 
-    // Create the tree
+    // Create the tree.
     var root = new Tree("Root")
       .Style("white on blue")
-      // .Guide(TreeGuide.Ascii)
-      // .Guide(TreeGuide.Line)
-      // .Guide(TreeGuide.DoubleLine)
+      // .Guide(TreeGuide.Ascii).
+      // .Guide(TreeGuide.Line).
+      // .Guide(TreeGuide.DoubleLine).
       .Guide(TreeGuide.BoldLine);
 
-    // Add some nodes
+    // Add some nodes.
     var foo = root.AddNode("[yellow]Foo[/]");
     var treeTable = foo.AddNode(new Table()
       .RoundedBorder()
@@ -164,9 +165,72 @@ public static class Program
 
     root.AddNode("Label").Collapse();
 
-    // Render the tree
+    // Render the tree.
     AnsiConsole.Write(root);
 
     #endregion
+
+    #region Bar Chart
+
+    AnsiConsole.Write(new BarChart()
+      .Width(60)
+      .Label("[green bold underline]Number of fruits[/]")
+      .CenterLabel()
+      .AddItem("Apple", 12, Color.Yellow)
+      .AddItem("Orange", 54, Color.Green)
+      .AddItem("Banana", 33, Color.Red)
+    );
+
+    // Create a list of fruits.
+    var items = new List<(string Label, double Value)>
+    {
+      ("Apple", 12),
+      ("Orange", 54),
+      ("Banana", 33)
+    };
+
+    // Render bar chart.
+    AnsiConsole.Write(new BarChart()
+      .Width(60)
+      .Label("[green bold underline]Number of fruits[/]")
+      .CenterLabel()
+      .AddItems(items, (item) => new BarChartItem(
+        item.Label, item.Value, Color.Yellow
+      ))
+    );
+
+    // Create a list of fruits from class.
+    var fruitItems = new List<Fruit>
+    {
+      new Fruit("Apple", 12, Color.Aqua),
+      new Fruit("Orange", 54, Color.DeepSkyBlue4),
+      new Fruit("Banana", 33, Color.Gold3),
+    };
+
+    // Render bar chart.
+    AnsiConsole.Write(new BarChart()
+      .Width(70)
+      .Label("[green bold underline]Number of fruits[/]")
+      .CenterLabel()
+      .AddItem(new Fruit("Mango", 3, Color.Khaki3))
+      .AddItems(fruitItems)
+    );
+
+    #endregion
+  }
+}
+
+// Fruit class implementing IBarChartItem
+public sealed class Fruit : IBarChartItem
+{
+  public string Label { get; set; }
+  public double Value { get; set; }
+  public Color? Color { get; set; }
+
+  public Fruit(string label, double value, Color? color = null)
+  {
+    Label = label;
+    Value = value;
+    Color = color;
   }
 }
