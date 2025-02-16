@@ -32,7 +32,7 @@ public static class Program
     {
       new Text("Item 1", new Style(Color.Red, Color.Black)),
       new Text("Item 2", new Style(Color.Green, Color.Black)),
-      new Text("Item 3", new Style(Color.Blue, Color.Black)),
+      new Text("Item 3", new Style(Color.Grey, Color.Black)),
     };
 
     // Render each item in list on separate line
@@ -130,6 +130,42 @@ public static class Program
 
     // Render the table to the console.
     AnsiConsole.Write(table);
+
+    #endregion
+
+    #region Tree
+
+    // Create the tree
+    var root = new Tree("Root")
+      .Style("white on blue")
+      // .Guide(TreeGuide.Ascii)
+      // .Guide(TreeGuide.Line)
+      // .Guide(TreeGuide.DoubleLine)
+      .Guide(TreeGuide.BoldLine);
+
+    // Add some nodes
+    var foo = root.AddNode("[yellow]Foo[/]");
+    var treeTable = foo.AddNode(new Table()
+      .RoundedBorder()
+      .AddColumn("First")
+      .AddColumn("Second")
+      .AddRow("1", "2")
+      .AddRow("3", "4")
+      .AddRow("5", "6")
+    );
+
+    treeTable.AddNode("[blue]Baz[/]");
+    foo.AddNode("Qux");
+
+    var bar = root.AddNode("[yellow]Bar[/]");
+    bar.AddNode(new Calendar(2025, 1)
+      .AddCalendarEvent(2025, 1, 20)
+      .HideHeader());
+
+    root.AddNode("Label").Collapse();
+
+    // Render the tree
+    AnsiConsole.Write(root);
 
     #endregion
   }
