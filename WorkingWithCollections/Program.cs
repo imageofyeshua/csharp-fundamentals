@@ -8,6 +8,8 @@ List<string> cities = new();
 cities.Add("Seoul");
 cities.Add("Tokyo");
 cities.Add("Beijing");
+cities.Add("New York");
+cities.Add("Seattle");
 
 /* Alternative syntaxes
 List<string> cities = new() { "London", "Paris", "Milan" };
