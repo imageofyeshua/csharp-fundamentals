@@ -99,29 +99,3 @@ await using (FileStream jsonLoad = File.Open(jsonPath, FileMode.Open))
 SectionTitle("JSON schema exporter");
 WriteLine(JsonSchemaExporter.GetJsonSchemaAsNode(
       JsonSerializerOptions.Default, typeof(Person)));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
