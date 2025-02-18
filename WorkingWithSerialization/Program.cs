@@ -1,5 +1,8 @@
 ﻿using System.Xml.Serialization;
 using Packt.Shared;
+using FastJson = System.Text.Json.JsonSerializer;
+using System.Text.Json;
+using System.Text.Json.Schema;
 
 List<Person> people = new()
 {
@@ -73,11 +76,29 @@ using (StreamWriter jsonStream = File.CreateText(jsonPath))
     Newtonsoft.Json.JsonSerializer jss = new();
     jss.Serialize(jsonStream, people);
 }
+
 OutputFileInfo(jsonPath);
 
+SectionTitle("Deserializing JSON files");
 
+await using (FileStream jsonLoad = File.Open(jsonPath, FileMode.Open))
+{
+  List<Person>? loadedPeople =
+    await FastJson.DeserializeAsync(utf8Json: jsonLoad,
+        returnType: typeof(List<Person>)) as List<Person>;
+  if (loadedPeople is not null)
+  {
+    foreach (Person p in loadedPeople)
+    {
+      WriteLine("{0} has {1} children.",
+          p.LastName, p.Children?.Count ?? 0);
+    }
+  }
+}
 
-
+SectionTitle("JSON schema exporter");
+WriteLine(JsonSchemaExporter.GetJsonSchemaAsNode(
+      JsonSerializerOptions.Default, typeof(Person)));
 
 
 
