@@ -1,28 +1,24 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using Spectre.Console;
+﻿using Spectre.Console;
 
-public static class Program
+public static partial class Program
 {
   public static void Main(string[] args)
   {
-    #region Columns
+  #region Columns
 
     AnsiConsole.Markup("[underline red]Hello[/] World!");
 
     WriteLine();
 
     // Render two items on separate columns to Console.
-    AnsiConsole.Write(new Columns(
-      new Text("Item 1"),
-      new Text("Item 2")
-    ));
+    AnsiConsole.Write(new Columns(new Text("Item 1"), new Text("Item 2")));
 
     // Create a list of Items.
     var columns = new List<Text>()
     {
       new Text("Item 1"),
-      new Text("Item 2"),
-      new Text("Item 3")
+          new Text("Item 2"),
+          new Text("Item 3"),
     };
 
     // Render each item in list on separate line
@@ -32,8 +28,8 @@ public static class Program
     var styledColumns = new List<Text>()
     {
       new Text("Item 1", new Style(Color.Red, Color.Black)),
-      new Text("Item 2", new Style(Color.Green, Color.Black)),
-      new Text("Item 3", new Style(Color.Grey, Color.Black)),
+          new Text("Item 2", new Style(Color.Green, Color.Black)),
+          new Text("Item 3", new Style(Color.Grey, Color.Black)),
     };
 
     // Render each item in list on separate line
@@ -59,7 +55,7 @@ public static class Program
     // Sets the padding.
     panel.Padding = new Padding(2, 2, 2, 2);
 
-    // Sets the expand property  
+    // Sets the expand property
     // panel.Expand = true;
 
     AnsiConsole.Write(panel);
@@ -119,7 +115,7 @@ public static class Program
     // Or chained together.
     // table.Columns[0].PadLeft(3).PadRight(5);
 
-    // Or with the shorthand method if the left and right 
+    // Or with the shorthand method if the left and right
     // padding are identical. Vertical padding is ignored.
     // table.Columns[0].Padding(4, 0);
 
@@ -146,22 +142,21 @@ public static class Program
 
     // Add some nodes.
     var foo = root.AddNode("[yellow]Foo[/]");
-    var treeTable = foo.AddNode(new Table()
-      .RoundedBorder()
-      .AddColumn("First")
-      .AddColumn("Second")
-      .AddRow("1", "2")
-      .AddRow("3", "4")
-      .AddRow("5", "6")
-    );
+    var treeTable = foo.AddNode(
+        new Table()
+        .RoundedBorder()
+        .AddColumn("First")
+        .AddColumn("Second")
+        .AddRow("1", "2")
+        .AddRow("3", "4")
+        .AddRow("5", "6")
+        );
 
     treeTable.AddNode("[blue]Baz[/]");
     foo.AddNode("Qux");
 
     var bar = root.AddNode("[yellow]Bar[/]");
-    bar.AddNode(new Calendar(2025, 1)
-      .AddCalendarEvent(2025, 1, 20)
-      .HideHeader());
+    bar.AddNode(new Calendar(2025, 1).AddCalendarEvent(2025, 1, 20).HideHeader());
 
     root.AddNode("Label").Collapse();
 
@@ -172,86 +167,58 @@ public static class Program
 
     #region Bar Chart
 
-    AnsiConsole.Write(new BarChart()
-      .Width(60)
-      .Label("[green bold underline]Number of fruits[/]")
-      .CenterLabel()
-      .AddItem("Apple", 12, Color.Yellow)
-      .AddItem("Orange", 54, Color.Green)
-      .AddItem("Banana", 33, Color.Red)
-    );
+    AnsiConsole.Write(
+        new BarChart()
+        .Width(60)
+        .Label("[green bold underline]Number of fruits[/]")
+        .CenterLabel()
+        .AddItem("Apple", 12, Color.Yellow)
+        .AddItem("Orange", 54, Color.Green)
+        .AddItem("Banana", 33, Color.Red)
+        );
 
     // Create a list of fruits.
     var items = new List<(string Label, double Value)>
     {
       ("Apple", 12),
-      ("Orange", 54),
-      ("Banana", 33)
+        ("Orange", 54),
+        ("Banana", 33),
     };
 
     // Render bar chart.
-    AnsiConsole.Write(new BarChart()
-      .Width(60)
-      .Label("[green bold underline]Number of fruits[/]")
-      .CenterLabel()
-      .AddItems(items, (item) => new BarChartItem(
-        item.Label, item.Value, Color.Yellow
-      ))
-    );
+    AnsiConsole.Write(
+        new BarChart()
+        .Width(60)
+        .Label("[green bold underline]Number of fruits[/]")
+        .CenterLabel()
+        .AddItems(items, (item) => new BarChartItem(item.Label, item.Value, Color.Yellow))
+        );
 
     // Create a list of fruits from class.
     var fruitItems = new List<Fruit>
     {
       new Fruit("Apple", 12, Color.Aqua),
-      new Fruit("Orange", 54, Color.DeepSkyBlue4),
-      new Fruit("Banana", 33, Color.Gold3),
+          new Fruit("Orange", 54, Color.DeepSkyBlue4),
+          new Fruit("Banana", 33, Color.Gold3),
     };
 
     // Render bar chart.
-    AnsiConsole.Write(new BarChart()
-      .Width(70)
-      .Label("[green bold underline]Number of fruits[/]")
-      .CenterLabel()
-      .AddItem(new Fruit("Mango", 3, Color.Khaki3))
-      .AddItems(fruitItems)
-    );
+    AnsiConsole.Write(
+        new BarChart()
+        .Width(70)
+        .Label("[green bold underline]Number of fruits[/]")
+        .CenterLabel()
+        .AddItem(new Fruit("Mango", 3, Color.Khaki3))
+        .AddItems(fruitItems)
+        );
     WriteLine();
 
     #endregion
 
-    #region Rows
+    Rows();
 
-    // Render two items on separate rows to Console.
-    AnsiConsole.Write(new Rows(
-      new Text("Item 1"),
-      new Text("Item 2")
-    ));
+    BreakdownChart();
 
-    WriteLine();
-
-    // Create a list of Items.
-    List<Text> rows = [
-      new Text("Item 1"),
-      new Text("Item 2"),
-      new Text("Item 3"),
-    ];
-
-    // Render each item in list on separate line.
-    AnsiConsole.Write(new Rows(rows));
-
-    WriteLine();
-
-    // Render each item, apply separate styles to each
-    List<Text> styledRows = [
-      new Text("Item 1", new Style(Color.Aqua, Color.Black)),
-      new Text("Item 2", new Style(Color.Cyan1, Color.Black)),
-      new Text("Item 3", new Style(Color.Magenta1, Color.Black)),
-    ];
-
-    // Render each item in list on separate line.
-    AnsiConsole.Write(new Rows(styledRows));
-
-    #endregion
   }
 }
 
