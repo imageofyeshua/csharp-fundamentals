@@ -2,6 +2,11 @@ namespace LordOfRing;
 
 public class Character
 {
+  // Constants
+  public const string FAMILY = "Fellowship Forever";
+
+  public static int NumberOfCharacters = 0;
+
   // Properties : private member variables
   private string _name;
   private int _speed = 40;
@@ -34,13 +39,15 @@ public class Character
   public Character(string name)
   {
     _name = name;
-    WriteLine($"Created Character with name {_name}");
+    NumberOfCharacters++;
+    WriteLine($"Created Character {NumberOfCharacters} with name {_name}");
   }
 
   public Character()
   {
     _name = "No name";
-    WriteLine($"Created Character with name {_name}");
+    NumberOfCharacters++;
+    WriteLine($"Created Character {NumberOfCharacters} with name {_name}");
   }
 
   // Functions

@@ -20,5 +20,13 @@ public class Program
 
     legolas.Strength = 40;
     WriteLine($"Name is {legolas.GetName()} with speed: {legolas.Strength}");
+
+    WriteLine($"We have created {Character.NumberOfCharacters} characters.");
+
+    Utils.SayStuff();
+    Utils.SayStuff();
+    Utils.SayStuff();
+    Utils.SayStuff();
+    Utils.SayStuff();
   }
 }
