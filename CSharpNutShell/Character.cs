@@ -19,7 +19,6 @@ public class Character
       WriteLine("Strength get invoked");
       return _strength;
     }
-
     set
     {
       WriteLine("Strength set invoked");
