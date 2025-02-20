@@ -4,9 +4,9 @@ public static partial class Program
 {
   public static void Main(string[] args)
   {
-    Columns();
+    // Columns();
 
-    Table();
+    // Table();
 
     // Tree();
 
@@ -16,6 +16,7 @@ public static partial class Program
 
     // BreakdownChart();
 
+    Rule();
   }
 }
 
