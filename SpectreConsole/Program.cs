@@ -16,7 +16,9 @@ public static partial class Program
 
     // BreakdownChart();
 
-    Rule();
+    // Rule();
+
+    Calendar();
   }
 }
 
