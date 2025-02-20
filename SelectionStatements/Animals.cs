@@ -4,19 +4,17 @@ namespace SelectionStatements;
 
 class Animal
 {
-  public string? Name;
-  public DateTime Born;
-  public byte Legs;
+    public string? Name;
+    public DateTime Born;
+    public byte Legs;
 }
 
 class Cat : Animal
 {
-  public bool IsDomestic;
+    public bool IsDomestic;
 }
 
 class Spider : Animal
 {
-  public bool IsVenomous;
+    public bool IsVenomous;
 }
-
-

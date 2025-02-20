@@ -4,8 +4,8 @@
 int x = 0;
 while (x < 10)
 {
-  WriteLine(x);
-  x++;
+    WriteLine(x);
+    x++;
 }
 
 // do-while statement
@@ -26,20 +26,20 @@ WriteLine("Correct!");
 
 for (int y = 0; y <= 10; y += 3)
 {
-  WriteLine(y);
+    WriteLine(y);
 }
 
 // foreach statement
 string[] names = { "Adam", "Steve", "Jason", "Daniel" };
 foreach (string name in names)
 {
-  WriteLine($"{name} has {name.Length} characters.");
+    WriteLine($"{name} has {name.Length} characters.");
 }
 
 // same as foreach
 IEnumerator e = names.GetEnumerator();
 while (e.MoveNext())
 {
-  string name = (string)e.Current;
-  WriteLine($"{name} has {name.Length} characters.");
+    string name = (string)e.Current;
+    WriteLine($"{name} has {name.Length} characters.");
 }

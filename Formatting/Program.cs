@@ -6,15 +6,15 @@ int numberOfApples = 12;
 decimal pricePerApple = 0.35M;
 
 Console.WriteLine(
-  format: "{0} apples cost {1:C}",
-  arg0: numberOfApples,
-  arg1: pricePerApple * numberOfApples
+    format: "{0} apples cost {1:C}",
+    arg0: numberOfApples,
+    arg1: pricePerApple * numberOfApples
 );
 
 string formatted = string.Format(
-  format: "{0} apples cost {1:C}",
-  arg0: numberOfApples,
-  arg1: pricePerApple * numberOfApples
+    format: "{0} apples cost {1:C}",
+    arg0: numberOfApples,
+    arg1: pricePerApple * numberOfApples
 );
 
 // WriteToFile(formatted)
@@ -30,15 +30,8 @@ string appleText = "Apples";
 int appleCount = 1234;
 string bananaText = "Bananas";
 int bananaCount = 56789;
-WriteLine(
-  format: "{0, -10} {1, 6}",
-  arg0: "Name", arg1: "Count"
-);
-WriteLine(
-  format: "{0, -10} {1, 6:N0}",
-  arg0: bananaText,
-  arg1: bananaCount
-);
+WriteLine(format: "{0, -10} {1, 6}", arg0: "Name", arg1: "Count");
+WriteLine(format: "{0, -10} {1, 6:N0}", arg0: bananaText, arg1: bananaCount);
 
 decimal value = 0.325M;
 WriteLine("Currency: {0:C}, Percentage: {0:0.0%}", value);
@@ -74,9 +67,9 @@ WriteLine($"long    {sizeof(long),-4} {long.MinValue,45} {long.MaxValue,45}");
 WriteLine($"ulong   {sizeof(ulong),-4} {ulong.MinValue,45} {ulong.MaxValue,45}");
 unsafe
 {
-  WriteLine($"Int128  {sizeof(Int128),-4} {Int128.MinValue,45} {Int128.MaxValue,45}");
-  WriteLine($"UInt128 {sizeof(UInt128),-4} {UInt128.MinValue,45} {UInt128.MaxValue,45}");
-  WriteLine($"Half    {sizeof(Half),-4} {Half.MinValue,45} {Half.MaxValue,45}");
+    WriteLine($"Int128  {sizeof(Int128),-4} {Int128.MinValue,45} {Int128.MaxValue,45}");
+    WriteLine($"UInt128 {sizeof(UInt128),-4} {UInt128.MinValue,45} {UInt128.MaxValue,45}");
+    WriteLine($"Half    {sizeof(Half),-4} {Half.MinValue,45} {Half.MaxValue,45}");
 }
 WriteLine($"float   {sizeof(float),-4} {float.MinValue,45} {float.MaxValue,45}");
 WriteLine($"double  {sizeof(double),-4} {double.MinValue,45} {double.MaxValue,45}");

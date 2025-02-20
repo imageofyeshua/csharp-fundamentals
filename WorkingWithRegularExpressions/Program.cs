@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 
 Write("Enter your age: ");
-string input = ReadLine()!;  // Null-forgiving operator.
+string input = ReadLine()!; // Null-forgiving operator.
 
 Regex ageChecker = new(@"^\d+$");
 WriteLine(ageChecker.IsMatch(input) ? "Thank you!" : $"This is not a valid age: {input}");
@@ -11,11 +11,11 @@ WriteLine(ageChecker.IsMatch(input) ? "Thank you!" : $"This is not a valid age: 
 // Syntax
 ^ : Start of input
 $ : End of input
-\d : A single digit 
+\d : A single digit
 \D : A single non-digit
 \s : Whitespace
 \S : Non-whitespace
-\w : Word characters 
+\w : Word characters
 \W : Non-word characters
 [A-Za-z0-9] : Range(s) of characters
 \^ : ^(caret) character
@@ -62,7 +62,7 @@ string[] filmsDumb = films.Split(',');
 WriteLine("Splitting with string.Split method:");
 foreach (string film in filmsDumb)
 {
-  WriteLine($"  {film}");
+    WriteLine($"  {film}");
 }
 
 Regex csv = CommaSeparator;
@@ -72,6 +72,5 @@ MatchCollection filmsSmart = csv.Matches(films);
 WriteLine("Splitting with regular expression:");
 foreach (Match film in filmsSmart)
 {
-  WriteLine($"  {film.Groups[2].Value}");
+    WriteLine($"  {film.Groups[2].Value}");
 }
-

@@ -23,14 +23,21 @@ Complex c3 = c1 + c2;
 
 // Output using the default ToString implementation.
 WriteLine($"{c1} added to {c2} is {c3}");
+
 // Output using a custom format.
-WriteLine("{0} + {1}i added to {2} + {3}i is {4} + {5}i",
-  c1.Real, c1.Imaginary,
-  c2.Real, c2.Imaginary,
-  c3.Real, c3.Imaginary);
+WriteLine(
+    "{0} + {1}i added to {2} + {3}i is {4} + {5}i",
+    c1.Real,
+    c1.Imaginary,
+    c2.Real,
+    c2.Imaginary,
+    c3.Real,
+    c3.Imaginary
+);
 
 Random r = Random.Shared;
-// minValue is an inclusive lower bound 
+
+// minValue is an inclusive lower bound
 // maxValue is an exclusive upper bound
 int dieRoll = r.Next(minValue: 1, maxValue: 7);
 WriteLine($"Random die roll: {dieRoll}");
@@ -43,26 +50,23 @@ r.NextBytes(arrayOfBytes); // Fills array with 256 random bytes.
 Write("Random bytes: ");
 for (int i = 0; i < arrayOfBytes.Length; i++)
 {
-  Write($"{arrayOfBytes[i]:X2} ");
+    Write($"{arrayOfBytes[i]:X2} ");
 }
 WriteLine();
 
-string[] beatles = r.GetItems(
-  choices: new[] { "John", "Paul", "George", "Ringo" },
-  length: 10
-);
+string[] beatles = r.GetItems(choices: new[] { "John", "Paul", "George", "Ringo" }, length: 10);
 
 Write("Random ten beatles:");
 foreach (string beatle in beatles)
 {
-  Write($"  {beatle}");
+    Write($"  {beatle}");
 }
 WriteLine();
 r.Shuffle(beatles);
 Write("Shuffled beatles:");
 foreach (string beatle in beatles)
 {
-  Write($"  {beatle}");
+    Write($"  {beatle}");
 }
 WriteLine();
 
@@ -73,12 +77,12 @@ byte[] guidAsBytes = g.ToByteArray();
 Write("GUID as byte array: ");
 for (int i = 0; i < guidAsBytes.Length; i++)
 {
-  Write($"{guidAsBytes[i]:X2} ");
+    Write($"{guidAsBytes[i]:X2} ");
 }
 WriteLine();
 WriteLine("Generating threeV7 GUIDs:");
 for (int i = 0; i < 3; i++)
 {
-  Guid g7 = Guid.CreateVersion7(DateTimeOffset.UtcNow);
-  WriteLine($"   {g7}.");
+    Guid g7 = Guid.CreateVersion7(DateTimeOffset.UtcNow);
+    WriteLine($"   {g7}.");
 }

@@ -4,7 +4,7 @@ double a = double.Parse(number);
 
 double Add(double a, double b)
 {
-  return a + b; // deliberate bug!
+    return a + b; // deliberate bug!
 }
 
 double b = 2.5;

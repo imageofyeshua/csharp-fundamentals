@@ -20,7 +20,7 @@ string path = Combine(CurrentDirectory, "book.json");
 
 using (Stream fileStream = File.Create(path))
 {
-  JsonSerializer.Serialize(utf8Json: fileStream, value: csharpBook, options);
+    JsonSerializer.Serialize(utf8Json: fileStream, value: csharpBook, options);
 }
 
 WriteLine("*** File Info ***");
@@ -30,6 +30,3 @@ WriteLine($"Size: {new FileInfo(path).Length:N0} bytes.");
 WriteLine("/-----------------------------");
 WriteLine(File.ReadAllText(path));
 WriteLine("-----------------------------/");
-
-
-

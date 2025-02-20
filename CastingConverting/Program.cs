@@ -1,5 +1,5 @@
-﻿using static System.Convert;
-using System.Globalization; // to use CultureInfo
+﻿using System.Globalization; // to use CultureInfo
+using static System.Convert;
 
 int a = 10;
 double b = a;
@@ -12,6 +12,7 @@ WriteLine($"c is {c}, d is {d}");
 long e = 10;
 int f = (int)e;
 WriteLine($"e is {e:N0}, f is {f:N0}");
+
 // e = long.MaxValue;
 e = 5_000_000_000;
 f = (int)e;
@@ -21,7 +22,7 @@ WriteLine("{0, 12} {1, 34}", "Decimal", "Binary");
 WriteLine("{0, 12} {0, 34:B32}", int.MaxValue);
 for (int i = 8; i >= -8; i--)
 {
-  WriteLine("{0, 12} {0, 34:B32}", i);
+    WriteLine("{0, 12} {0, 34:B32}", i);
 }
 WriteLine("{0, 12} {0, 34:B32}", int.MinValue);
 
@@ -36,33 +37,33 @@ WriteLine($"g is {g}, h is {h}");
 
 double[,] doubles =
 {
- { 9.49, 9.5, 9.51 },
- { 10.49, 10.5, 10.51 },
- { 11.49, 11.5, 11.51 },
- { 12.49, 12.5, 12.51 },
- { -12.49, -12.5, -12.51 },
- { -11.49, -11.5, -11.51 },
- { -10.49, -10.5, -10.51 },
- { -9.49, -9.5, -9.51 }
+    { 9.49, 9.5, 9.51 },
+    { 10.49, 10.5, 10.51 },
+    { 11.49, 11.5, 11.51 },
+    { 12.49, 12.5, 12.51 },
+    { -12.49, -12.5, -12.51 },
+    { -11.49, -11.5, -11.51 },
+    { -10.49, -10.5, -10.51 },
+    { -9.49, -9.5, -9.51 },
 };
 WriteLine($"|  double  |  ToInt32  |  double  |  ToInt32  |  double  |  ToInt32  |");
 for (int x = 0; x < 8; x++)
 {
-  for (int y = 0; y < 3; y++)
-  {
-    Write($"|  {doubles[x, y],6}  |  {ToInt32(doubles[x, y]),7}");
-  }
-  WriteLine("|");
+    for (int y = 0; y < 3; y++)
+    {
+        Write($"|  {doubles[x, y],6}  |  {ToInt32(doubles[x, y]),7}");
+    }
+    WriteLine("|");
 }
 WriteLine();
 
 foreach (double n in doubles)
 {
-  WriteLine(format:
-    "Math.Round({0}, 0, MidpointRounding.AwayFromZero) is {1}",
-    arg0: n,
-    arg1: Math.Round(value: n, digits: 0, mode: MidpointRounding.AwayFromZero)
-  );
+    WriteLine(
+        format: "Math.Round({0}, 0, MidpointRounding.AwayFromZero) is {1}",
+        arg0: n,
+        arg1: Math.Round(value: n, digits: 0, mode: MidpointRounding.AwayFromZero)
+    );
 }
 
 int number = 12;
@@ -82,7 +83,7 @@ Random.Shared.NextBytes(binaryObject);
 WriteLine("Binary Object as bytes:");
 for (int index = 0; index < binaryObject.Length; index++)
 {
-  Write($"{binaryObject[index]:X2} "); // :X2 for hexadecimal notation
+    Write($"{binaryObject[index]:X2} "); // :X2 for hexadecimal notation
 }
 WriteLine();
 
@@ -100,5 +101,9 @@ WriteLine($"My birthday is {birthday:D}");
 
 bool success = int.TryParse("123", out int num);
 WriteLine($"Parsed Int: {num}");
-bool result = Uri.TryCreate("https://localhost:5000/api/customers", UriKind.Absolute, out Uri? serviceUrl);
+bool result = Uri.TryCreate(
+    "https://localhost:5000/api/customers",
+    UriKind.Absolute,
+    out Uri? serviceUrl
+);
 WriteLine($"Service URL: {serviceUrl}");

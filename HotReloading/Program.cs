@@ -1,5 +1,5 @@
 ﻿while (true)
 {
-  WriteLine("Goodbye, Hot Reload!");
-  await Task.Delay(2000);
+    WriteLine("Goodbye, Hot Reload!");
+    await Task.Delay(2000);
 }

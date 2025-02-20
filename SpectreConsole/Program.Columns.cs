@@ -2,64 +2,64 @@ using Spectre.Console;
 
 partial class Program
 {
-  public static void Columns()
-  {
-    #region Columns
-
-    AnsiConsole.Markup("[underline red]Hello[/] World!");
-
-    WriteLine();
-
-    // Render two items on separate columns to Console.
-    AnsiConsole.Write(new Columns(new Text("Item 1"), new Text("Item 2")));
-
-    // Create a list of Items.
-    var columns = new List<Text>()
+    public static void Columns()
     {
-      new Text("Item 1"),
-          new Text("Item 2"),
-          new Text("Item 3"),
-    };
+        #region Columns
 
-    // Render each item in list on separate line
-    AnsiConsole.Write(new Columns(columns));
+        AnsiConsole.Markup("[underline red]Hello[/] World!");
 
-    // Create a list of Items, apply separate styles to each
-    var styledColumns = new List<Text>()
-    {
-      new Text("Item 1", new Style(Color.Red, Color.Black)),
-          new Text("Item 2", new Style(Color.Green, Color.Black)),
-          new Text("Item 3", new Style(Color.Grey, Color.Black)),
-    };
+        WriteLine();
 
-    // Render each item in list on separate line
-    AnsiConsole.Write(new Columns(styledColumns));
+        // Render two items on separate columns to Console.
+        AnsiConsole.Write(new Columns(new Text("Item 1"), new Text("Item 2")));
 
-    #endregion
+        // Create a list of Items.
+        var columns = new List<Text>()
+        {
+            new Text("Item 1"),
+            new Text("Item 2"),
+            new Text("Item 3"),
+        };
 
-    #region Panel
+        // Render each item in list on separate line
+        AnsiConsole.Write(new Columns(columns));
 
-    var panel = new Panel("Hello, Daniel");
+        // Create a list of Items, apply separate styles to each
+        var styledColumns = new List<Text>()
+        {
+            new Text("Item 1", new Style(Color.Red, Color.Black)),
+            new Text("Item 2", new Style(Color.Green, Color.Black)),
+            new Text("Item 3", new Style(Color.Grey, Color.Black)),
+        };
 
-    // Sets the header.
-    panel.Header = new PanelHeader("How are you?");
+        // Render each item in list on separate line
+        AnsiConsole.Write(new Columns(styledColumns));
 
-    // Sets the border.
-    //panel.Border = BoxBorder.Ascii;
-    panel.Border = BoxBorder.Square;
-    //panel.Border = BoxBorder.Rounded;
-    //panel.Border = BoxBorder.Heavy;
-    //panel.Border = BoxBorder.Double;
-    //panel.Border = BoxBorder.None;
+        #endregion
 
-    // Sets the padding.
-    panel.Padding = new Padding(2, 2, 2, 2);
+        #region Panel
 
-    // Sets the expand property
-    // panel.Expand = true;
+        var panel = new Panel("Hello, Daniel");
 
-    AnsiConsole.Write(panel);
+        // Sets the header.
+        panel.Header = new PanelHeader("How are you?");
 
-    #endregion
-  }
+        // Sets the border.
+        //panel.Border = BoxBorder.Ascii;
+        panel.Border = BoxBorder.Square;
+        //panel.Border = BoxBorder.Rounded;
+        //panel.Border = BoxBorder.Heavy;
+        //panel.Border = BoxBorder.Double;
+        //panel.Border = BoxBorder.None;
+
+        // Sets the padding.
+        panel.Padding = new Padding(2, 2, 2, 2);
+
+        // Sets the expand property
+        // panel.Expand = true;
+
+        AnsiConsole.Write(panel);
+
+        #endregion
+    }
 }

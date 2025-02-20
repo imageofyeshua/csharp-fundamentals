@@ -5,15 +5,9 @@ int lengthOfFirst = name.IndexOf(' ');
 int lengthOfLast = name.Length - lengthOfFirst - 1;
 
 // Using Substring.
-string firstName = name.Substring(
-  startIndex: 0,
-  length: lengthOfFirst
-);
+string firstName = name.Substring(startIndex: 0, length: lengthOfFirst);
 
-string lastName = name.Substring(
-  startIndex: name.Length - lengthOfLast,
-  length: lengthOfLast
-);
+string lastName = name.Substring(startIndex: name.Length - lengthOfLast, length: lengthOfLast);
 
 WriteLine($"First: {firstName}, Last: {lastName}");
 
@@ -28,7 +22,7 @@ ReadOnlySpan<char> text = "12+23+456".AsSpan();
 int sum = 0;
 foreach (Range r in text.Split('+'))
 {
-  sum += int.Parse(text[r]);
+    sum += int.Parse(text[r]);
 }
 WriteLine($"Sum using Split: {sum}");
 
@@ -38,6 +32,6 @@ ReadOnlySpan<char> multi = "3*12*43".AsSpan();
 int result = 1;
 foreach (Range r in multi.Split('*'))
 {
-  result *= int.Parse(multi[r]);
+    result *= int.Parse(multi[r]);
 }
 WriteLine($"Result using Split: {result}");

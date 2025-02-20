@@ -2,23 +2,22 @@
 
 public static partial class Program
 {
-  public static void Main(string[] args)
-  {
-    // Columns();
+    public static void Main(string[] args)
+    {
+        // Columns();
 
-    // Table();
+        // Table();
 
-    // Tree();
+        // Tree();
 
-    // BarChart();
+        // BarChart();
 
-    // Rows();
+        // Rows();
 
-    // BreakdownChart();
+        // BreakdownChart();
 
-    // Rule();
+        // Rule();
 
-    Calendar();
-  }
+        Calendar();
+    }
 }
-

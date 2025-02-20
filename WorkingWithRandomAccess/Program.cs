@@ -1,9 +1,11 @@
-﻿using Microsoft.Win32.SafeHandles;
-using System.Text;
-using SafeFileHandle handle =
-  File.OpenHandle(path: "coffee.txt",
-      mode: FileMode.OpenOrCreate,
-      access: FileAccess.ReadWrite);
+﻿using System.Text;
+using Microsoft.Win32.SafeHandles;
+
+using SafeFileHandle handle = File.OpenHandle(
+    path: "coffee.txt",
+    mode: FileMode.OpenOrCreate,
+    access: FileAccess.ReadWrite
+);
 
 string message = "Cafe $4.39";
 

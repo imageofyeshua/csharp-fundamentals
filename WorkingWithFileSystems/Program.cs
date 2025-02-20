@@ -1,5 +1,4 @@
 ﻿using Spectre.Console; // To use Table.
-
 #region Handling cross-platform environments and filesystems
 SectionTitle("Handling cross-platform environments and filesystems");
 
@@ -91,10 +90,7 @@ WriteLine($"Does it exist? {Path.Exists(newFolder)}");
 SectionTitle("Managing files");
 
 // Define a directory path to output files starting in the user's folder.
-string dir = Combine(
-  GetFolderPath(SpecialFolder.Personal),
-  "OutputFiles"
-);
+string dir = Combine(GetFolderPath(SpecialFolder.Personal), "OutputFiles");
 CreateDirectory(dir);
 
 // Define file paths.
@@ -111,10 +107,9 @@ WriteLine($"Does it exist? {File.Exists(textFile)}");
 
 // Copy the file, and overwrite if it already exists.
 File.Copy(sourceFileName: textFile, destFileName: backupFile, overwrite: true);
-WriteLine(
-  $"Does {backupFile} exists? {File.Exists(backupFile)}"
-);
+WriteLine($"Does {backupFile} exists? {File.Exists(backupFile)}");
 Write("Confirm the files exist, and then press any key.");
+
 // ReadKey(intercept: true);
 
 // Delete the file.
@@ -134,8 +129,7 @@ textReader.Close();
 SectionTitle("Managing paths");
 WriteLine($"Folder Name: {GetDirectoryName(textFile)}");
 WriteLine($"File Name: {GetFileName(textFile)}");
-WriteLine($"File Name without Extension: {0}",
-  GetFileNameWithoutExtension(textFile));
+WriteLine($"File Name without Extension: {0}", GetFileNameWithoutExtension(textFile));
 WriteLine($"File Extension: {GetExtension(textFile)}");
 WriteLine($"Random File Name: {GetRandomFileName()}");
 WriteLine($"Temporary File Name: {GetTempFileName()}");

@@ -3,25 +3,23 @@ WriteLine($"OS Version is {Environment.OSVersion}");
 
 if (OperatingSystem.IsLinux())
 {
-  WriteLine("I am Linux.");
+    WriteLine("I am Linux.");
 }
 else if (OperatingSystem.IsMacOS())
 {
-  WriteLine("I am MacOS.");
+    WriteLine("I am MacOS.");
 }
-else if (OperatingSystem.IsWindowsVersionAtLeast(
-  major: 10, build: 22000
-))
+else if (OperatingSystem.IsWindowsVersionAtLeast(major: 10, build: 22000))
 {
-  WriteLine("I am Windows 11.");
+    WriteLine("I am Windows 11.");
 }
 else if (OperatingSystem.IsWindowsVersionAtLeast(major: 10))
 {
-  WriteLine("I am Windows 10.");
+    WriteLine("I am Windows 10.");
 }
 else
 {
-  WriteLine("I am some other mysterious OS.");
+    WriteLine("I am some other mysterious OS.");
 }
 WriteLine("End of OS Check");
 

@@ -1,75 +1,68 @@
-using Packt.Shared;
 using System.IO.Compression;
 using System.Xml;
+using Packt.Shared;
 
 partial class Program
 {
-  private static void Compress(string algorithm = "gzip")
-  {
-    // Define a file path using the algorithm as file extension.
-    string filePath = Combine(
-      CurrentDirectory, $"streams.{algorithm}"
-    );
-    FileStream file = File.Create(filePath);
-    Stream compressor;
-
-    if (algorithm == "gzip")
+    private static void Compress(string algorithm = "gzip")
     {
-      compressor = new GZipStream(file, CompressionMode.Compress);
-    }
-    else
-    {
-      compressor = new BrotliStream(file, CompressionMode.Compress);
-    }
+        // Define a file path using the algorithm as file extension.
+        string filePath = Combine(CurrentDirectory, $"streams.{algorithm}");
+        FileStream file = File.Create(filePath);
+        Stream compressor;
 
-    using (compressor)
-    {
-      using (XmlWriter xml = XmlWriter.Create(compressor))
-      {
-        xml.WriteStartDocument();
-        xml.WriteStartElement("callsigns");
-
-        foreach (string item in Viper.Callsigns)
+        if (algorithm == "gzip")
         {
-          xml.WriteElementString("callsign", item);
+            compressor = new GZipStream(file, CompressionMode.Compress);
         }
-      }
-    } // Also closes the underlying stream
-    OutputFileInfo(filePath);
-
-    // Read the compressed file.
-    WriteLine("Reading the compressed XML file:");
-    file = File.Open(filePath, FileMode.Open);
-    Stream decompressor;
-
-    if (algorithm == "gzip")
-    {
-      decompressor = new GZipStream(
-        file, CompressionMode.Decompress
-      );
-    }
-    else
-    {
-      decompressor = new BrotliStream(
-        file, CompressionMode.Decompress
-      );
-    }
-
-    using (decompressor)
-
-    using (XmlReader reader = XmlReader.Create(decompressor))
-
-      while (reader.Read())
-      {
-        // Check if we are on an element node named callsign.
-        if ((reader.NodeType == XmlNodeType.Element)
-          && (reader.Name == "callsign"))
+        else
         {
-          reader.Read(); // Move to the next inside element.
-          WriteLine($"{reader.Value}");
+            compressor = new BrotliStream(file, CompressionMode.Compress);
         }
-        // Alternative syntax with property pattern matching:
-        // if (reader is { NodeType: XmlNodeType.Element, Name: "callsign" })
-      }
-  }
+
+        using (compressor)
+        {
+            using (XmlWriter xml = XmlWriter.Create(compressor))
+            {
+                xml.WriteStartDocument();
+                xml.WriteStartElement("callsigns");
+
+                foreach (string item in Viper.Callsigns)
+                {
+                    xml.WriteElementString("callsign", item);
+                }
+            }
+        } // Also closes the underlying stream
+        OutputFileInfo(filePath);
+
+        // Read the compressed file.
+        WriteLine("Reading the compressed XML file:");
+        file = File.Open(filePath, FileMode.Open);
+        Stream decompressor;
+
+        if (algorithm == "gzip")
+        {
+            decompressor = new GZipStream(file, CompressionMode.Decompress);
+        }
+        else
+        {
+            decompressor = new BrotliStream(file, CompressionMode.Decompress);
+        }
+
+        using (decompressor)
+
+        using (XmlReader reader = XmlReader.Create(decompressor))
+
+            while (reader.Read())
+            {
+                // Check if we are on an element node named callsign.
+                if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "callsign"))
+                {
+                    reader.Read(); // Move to the next inside element.
+                    WriteLine($"{reader.Value}");
+                }
+                // Alternative syntax with property pattern matching:
+                // if (reader is { NodeType: XmlNodeType.Element, Name: "callsign" })
+            }
+    }
 }

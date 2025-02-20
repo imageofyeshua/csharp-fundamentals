@@ -1,6 +1,5 @@
-﻿using System.Collections.Immutable; // To use ImmutableDictionary<T, T>
-using System.Collections.Frozen; // To use FrozenDictionary<T, T>
-
+﻿using System.Collections.Frozen; // To use FrozenDictionary<T, T>
+using System.Collections.Immutable; // To use ImmutableDictionary<T, T>
 // Define an alias for a dictionary with string key and string value.
 using StringDictionary = System.Collections.Generic.Dictionary<string, string>;
 
@@ -20,8 +19,12 @@ cities.AddRange(new[] { "London", "Paris", "Milan" });
 OutputCollection("Initial list", cities);
 WriteLine($"The first city is {cities[0]}.");
 WriteLine($"The last city is {cities[cities.Count - 1]}.");
-WriteLine($"Are all cities longer than four characters? {cities.TrueForAll(city => city.Length > 4)}.");
-WriteLine($"Do all cities contain the character 'e'? {cities.TrueForAll(city => city.Contains('e'))}.");
+WriteLine(
+    $"Are all cities longer than four characters? {cities.TrueForAll(city => city.Length > 4)}."
+);
+WriteLine(
+    $"Do all cities contain the character 'e'? {cities.TrueForAll(city => city.Contains('e'))}."
+);
 cities.Insert(0, "Sydney");
 OutputCollection("After inserting Sydney at index 0", cities);
 cities.RemoveAt(1);
@@ -60,7 +63,7 @@ OutputCollection("Dictionary values", keywords.Values);
 WriteLine("Keywords and their definitions:");
 foreach (KeyValuePair<string, string> item in keywords)
 {
-  WriteLine($"   {item.Key}: {item.Value}");
+    WriteLine($"   {item.Key}: {item.Value}");
 }
 
 // Look up a value using a key.
@@ -70,11 +73,10 @@ WriteLine($"The definition of {key} is {keywords[key]}");
 // Sets example
 HashSet<string> names = new();
 
-foreach (string name in
-  new[] { "Adam", "Barry", "Charlie", "Barry" })
+foreach (string name in new[] { "Adam", "Barry", "Charlie", "Barry" })
 {
-  bool added = names.Add(name);
-  WriteLine($"{name} was added: {added}");
+    bool added = names.Add(name);
+    WriteLine($"{name} was added: {added}");
 }
 WriteLine($"names set: {string.Join(',', names)}");
 
@@ -102,6 +104,7 @@ OutputCollection("Initial queue from front to back", coffee);
 
 // Priority queue example
 PriorityQueue<string, int> digitalId = new();
+
 // Add some people.
 // 1 = High priority people in their greed for money and this world.
 // 2 = Medium priority e.g. lay-men
@@ -125,23 +128,21 @@ OutputPQ("Current queue for digitalId", digitalId.UnorderedItems);
 // UseDictionary(keywords.AsReadOnly());
 UseDictionary(keywords.ToImmutableDictionary());
 
-ImmutableDictionary<string, string> immutableKeywords =
-  keywords.ToImmutableDictionary();
+ImmutableDictionary<string, string> immutableKeywords = keywords.ToImmutableDictionary();
 
 // Call the Add method with a return value.
-ImmutableDictionary<string, string> newDictionary =
-  immutableKeywords.Add(
+ImmutableDictionary<string, string> newDictionary = immutableKeywords.Add(
     key: Guid.NewGuid().ToString(),
     value: Guid.NewGuid().ToString()
-  );
+);
 OutputCollection("Immutable keywords dictionary", immutableKeywords);
 OutputCollection("New keywords dictionary", newDictionary);
 
 // Creating a frozen collection has an overhead to perform complex optimizations.
-FrozenDictionary<string, string> frozenKeywords =
-  keywords.ToFrozenDictionary();
+FrozenDictionary<string, string> frozenKeywords = keywords.ToFrozenDictionary();
 
 OutputCollection("Frozen keywords dictionary", frozenKeywords);
+
 // Lookups are faster in a frozen dictionary.
 WriteLine($"Define long: {frozenKeywords["long"]}");
 
@@ -160,7 +161,7 @@ int[] combinedRows = [.. row0, .. row1, .. row2];
 WriteLine("Spreading elements with dot operator");
 foreach (int number in combinedRows)
 {
-  Write($"{number}, ");
+    Write($"{number}, ");
 }
 
 // Load ten thousand fruits into the list.
@@ -170,14 +171,14 @@ fruits.EnsureCapacity(10_000);
 // Passing collections to methods and their speed
 void IProcessCollection<T>(IEnumerable<T> collection)
 {
-  // Process the items in the collection
-  // Iteration allocates an object on the heap in the memory
+    // Process the items in the collection
+    // Iteration allocates an object on the heap in the memory
 }
 void LProcessCollection<T>(List<T> collection)
 {
-  // Process the items in the collection
-  // List<T>.Enumerator GetEnumerator() method
-  // Returns a struct as a reference type >> 2 ~ 3 times faster
+    // Process the items in the collection
+    // List<T>.Enumerator GetEnumerator() method
+    // Returns a struct as a reference type >> 2 ~ 3 times faster
 }
 IProcessCollection(names);
 LProcessCollection(names.ToList());

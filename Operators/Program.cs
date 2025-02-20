@@ -20,6 +20,7 @@ WriteLine("*************************");
 double g = 11.0;
 WriteLine($"g is {g:N1}, f is {f}");
 WriteLine($"g / f = {g / f}");
+
 /*
 int p = 6;
 p += 3; // Equivalent to: p = p + 3;
@@ -31,7 +32,7 @@ p /= 3; // Equivalent to: p = p / 3;
 // string? authorName = GetAuthorName() // A fictional function
 // The maxLength variable will be the length of authorName if it is not null,
 // or 30, if authorName is null.
-// int maxLength = authorName?.Length ?? 30; 
+// int maxLength = authorName?.Length ?? 30;
 // authorName ??= "unknown"
 // authorName variable will be "unknown" if authorName was null.
 
@@ -73,6 +74,6 @@ WriteLine($"y >> 1     | {y >> 1,7} | {y >> 1:B8}"); // Right-shift y by one bit
 
 static bool DoStuff()
 {
-  WriteLine("I am doing some stuff.");
-  return true;
+    WriteLine("I am doing some stuff.");
+    return true;
 }
