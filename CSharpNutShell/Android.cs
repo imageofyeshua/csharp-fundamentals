@@ -12,7 +12,7 @@ class Android
         Count++;
     }
 
-    public void Introduce()
+    public virtual void Introduce()
     {
         WriteLine($"I am {Name}, a {Race}.");
     }

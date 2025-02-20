@@ -75,4 +75,9 @@ public class Character
             _speed = speed;
         }
     }
+
+    public static void CountCharacters()
+    {
+        WriteLine($"There are {NumberOfCharacters} characters.");
+    }
 }

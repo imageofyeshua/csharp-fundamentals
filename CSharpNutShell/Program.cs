@@ -34,5 +34,20 @@ public class Program
         trump.SneakAround();
         trump.ChangeName("DDoramp");
         trump.Introduce();
+
+        Monster elon = new Monster("Elon Musk");
+        elon.Introduce();
+
+        Character.CountCharacters();
+
+        if (trump is Nephilim)
+        {
+            WriteLine($"{trump.Name} is Nephilim");
+        }
+        else if (trump is Android)
+        {
+            WriteLine($"{trump.Name} is Android");
+        }
+
     }
 }
