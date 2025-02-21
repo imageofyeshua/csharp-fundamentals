@@ -18,6 +18,8 @@ public static partial class Program
 
         // Rule();
 
-        Calendar();
+        // Calendar();
+
+        Panel();
     }
 }
