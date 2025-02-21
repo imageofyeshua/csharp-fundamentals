@@ -20,6 +20,8 @@ public static partial class Program
 
         // Calendar();
 
-        Panel();
+        // Panel();
+
+        Layout();
     }
 }
