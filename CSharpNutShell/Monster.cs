@@ -1,4 +1,4 @@
-class Monster : Android
+partial class Monster : Android
 {
     public Monster(string name) : base(name, "Monster") {}
 

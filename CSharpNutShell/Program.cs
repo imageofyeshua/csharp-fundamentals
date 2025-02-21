@@ -4,6 +4,20 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        WriteLine("Starting...");
+
+        Mordor m = Mordor.Instance;
+        Mordor m2 = Mordor.Instance;
+        m.SayHello();
+        m.AddOrc();
+        m2.AddOrc();
+        m.AddOrc();
+
+        WriteLine(m.NumOrcs);
+        WriteLine(m2.NumOrcs);
+
+
+        /*
         Character frodo = new Character("Frodo");
         Character legolas = new Character("Legolas");
         Character nobody = new Character();
@@ -36,7 +50,9 @@ public class Program
         trump.Introduce();
 
         Monster elon = new Monster("Elon Musk");
+        elon.Age = 800;
         elon.Introduce();
+        elon.GetAge();
 
         Character.CountCharacters();
 
@@ -49,5 +65,8 @@ public class Program
             WriteLine($"{trump.Name} is Android");
         }
 
+        Rock myRock = new Rock("Granite", 15);
+        WriteLine(myRock);
+        */
     }
 }
