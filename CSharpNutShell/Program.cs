@@ -6,6 +6,17 @@ public class Program
     {
         WriteLine("Starting...");
 
+        Weapon wp = Weapon.Axe;
+
+        SayWeapon(wp);
+
+        /*
+        double frodoHeight = 1.234567;
+        WriteLine($"Frodo's height is {frodoHeight:F2} meters");
+
+        double chanceOfVictory = 0.75;
+        WriteLine($"Frodo's height is {chanceOfVictory:P1}");
+
         Mordor m = Mordor.Instance;
         Mordor m2 = Mordor.Instance;
         m.SayHello();
@@ -16,8 +27,6 @@ public class Program
         WriteLine(m.NumOrcs);
         WriteLine(m2.NumOrcs);
 
-
-        /*
         Character frodo = new Character("Frodo");
         Character legolas = new Character("Legolas");
         Character nobody = new Character();
@@ -69,4 +78,8 @@ public class Program
         WriteLine(myRock);
         */
     }
+        private static void SayWeapon(Weapon wp)
+        {
+            WriteLine($"I am using a {wp}");
+        }
 }

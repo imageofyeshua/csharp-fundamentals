@@ -1,5 +1,6 @@
 ﻿using DelegatesAndEvents;
 
+/*
 Player player = new();
 var party = new Party();
 
@@ -19,3 +20,23 @@ static void OnAchievementUnlocked(int points)
         $"Congratulations from \"Program.cs\"! Achievement unlocked for earning {points} points!"
     );
 }
+*/
+
+ScoringSystem scoringSystem = new ScoringSystem();
+scoringSystem.OnScored += HandleScore;
+scoringSystem.OnScored += HandleScore2;
+scoringSystem.Score();
+scoringSystem.OnScored -= HandleScore;
+scoringSystem.OnScored -= HandleScore2;
+scoringSystem.Score();
+
+static void HandleScore()
+{
+    WriteLine("HandleScore event handled!");
+}
+
+static void HandleScore2()
+{
+    WriteLine("HandleScore2 event handled!");
+}
+
